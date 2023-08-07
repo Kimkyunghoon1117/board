@@ -1,0 +1,174 @@
+:root{--header-height-size: 60px; }
+:root{--aside-width-size: 200px; }
+
+* {
+  box-sizing: border-box;
+}
+html{
+    height: 100%;
+  }
+  body {
+    height: calc(100% - 60px);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: rgb(#fff);
+  }
+  li {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+  }
+
+.wrapper {
+    /*display: flex;
+    flex-wrap: wrap;*/
+    height: auto;
+    min-height: 100%;
+    padding-bottom: 60px;
+  }
+  /*
+  .wrapper > * {
+    flex-grow: 1;
+    flex-basis: 100%;
+  }
+
+.heaer   { order: 1; }
+.aside { order: 2; }
+.main    { order: 3; }
+.footer  { order: 4; }
+*/
+  /* Header CSS */
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: var(--header-height-size);
+    z-index: 2000;
+    background-color: #fff;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05);
+  }
+  .wrapper nav { float: right; }
+
+  .logo {
+    display: inline-block;
+    height: var(--header-height-size);
+    margin: 0 0 0 25px;
+  }
+  .logo > img { height: var(--header-height-size); }
+  .nav-items > li { display:inline-block; }
+  .nav-items > li > a {
+    line-height: var(--header-height-size);
+    padding: 0 30px;
+    color: rgba(0, 0, 0, 0.4);
+  }
+  .nav-items > li > a:hover { color: rgba(0, 0, 0, 0.8); }
+  /* Aside CSS */
+  aside {
+    position: fixed;
+    top: var(--header-height-size);
+    bottom: 0;
+  
+    width: var(--aside-width-size);
+    padding-top: 25px;
+    background-color: #fff;
+    box-shadow: 2px 0 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05);
+  }
+  aside > ul > li > a {
+    display: block;
+    color: rgb(0, 0, 0);
+    padding: 10px 0 10px 20px;
+  }
+  aside > ul {
+    width: var(--aside-width-size);
+  }
+  aside > ul > li > a.active {
+    background-color: #4CAF50;
+  }
+  aside > ul > li > a:hover:not(.active) {
+    background-color: #555;
+  }
+  .main {
+    height: calc(100% - 60px);
+    margin: var(--header-height-size) 0 0 var(--aside-width-size);
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+  }
+
+  .footer {
+    /* footer를 aside위에 올리기 위해 사용(부유객체) */
+    height: 60px;
+    width: 100%;
+    margin-left: var(--aside-width-size);
+    padding: 0 25px;
+    line-height: 60px;
+    color: #8a8c8f;
+    border-top: 1px solid #dee5e7;
+    background-color: #f2f2f2;
+    position: relative;
+    transform: translateY(-100%);
+  }
+  
+  /* Form css*/
+   form[id='login'] {
+      margin-top: 60px;
+       width:400px;
+       height:500px;
+       display : flex;
+       flex-direction: column;
+       align-items:center;
+       border: 1px solid rgb(89,117,196);
+       border-radius: 10px;
+   }
+ form[id='register']{
+       width:400px;
+       height:600px;
+       display : flex;
+       flex-direction: column;
+       align-items:center;
+       position : absolute;
+       top:50%;
+       left:50%;
+       transform: translate(-50%, -50%) ;
+       border: 1px solid rgb(89,117,196);
+       border-radius: 10px;
+   }
+   form > input {
+       width: 300px;
+       height: 40px;
+       border : 1px solid rgb(89,117,196);
+       border-radius:5px;
+       padding: 0 10px;
+       margin-bottom: 10px;
+   }
+   form >button {
+       background-color: rgb(89,117,196);
+       color : white;
+       width:300px;
+       height:50px;
+       font-size: 17px;
+       border : none;
+       border-radius: 5px;
+       margin : 20px 0 30px 0;
+   }
+   form > #title, form > .title {
+       font-size : 50px;
+       margin: 40px 0 30px 0;
+   }
+   form > #msg {
+       height: 30px;
+       text-align:center;
+       font-size:16px;
+       color:red;
+       margin-bottom: 20px;
+   }
+	form>label {
+	    width:300px;
+	    height:30px;
+	    margin-top :4px;
+	}
+	.form2> .sns-chk {
+	    margin-top : 5px; 
+	}
